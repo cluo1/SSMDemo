@@ -3,15 +3,23 @@
 	 
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div style="width:500px;margin:0px auto;text-align:center">	 
+  
+  <%
+     String sPath =  request.getContextPath();
+  %>
 	<table align='center' border='1' cellspacing='0'>
 	    <tr>
 	        <td>id</td>
 	        <td>name</td>
+	        <td>edit</td>
+	        <td>delete</td>
 	    </tr>
 	    <c:forEach items="${cs}" var="c" varStatus="st">
 	        <tr>
 	            <td>${c.id}</td>
 	            <td>${c.name}</td>
+	            <td><a href="<%=sPath %>/editCategory?id=${c.id}">edit</a></td>
+              <td><a href="<%=sPath %>/deleteCategory/?id=${c.id}">delete</a></td>
 	        </tr>
 	    </c:forEach>
 	</table>

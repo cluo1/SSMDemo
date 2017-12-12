@@ -36,4 +36,14 @@ public class CategoryController {
 		return mv;
 	}
 
+	@RequestMapping("editCategory")
+	public ModelAndView updateCategory(Category category){
+		int id = category.getId();
+		
+		ModelAndView mv = new ModelAndView();
+		 
+		mv.setViewName("editCategory");
+		
+		return mv;
+	}
 }
