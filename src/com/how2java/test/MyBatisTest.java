@@ -18,31 +18,31 @@ public class MyBatisTest {
 	@Autowired
 	CategoryMapper categoryMapper;
 	
-	@Test
-	public void add(){
-		for(int i=0;i<100;i++){
-			Category category = new Category();
-			category.setName("new Category");
-			//categoryMapper.add(category);
-		}
-	}
-	
-	@Test
-	public void total(){
-		int total = categoryMapper.total();
-		System.out.println("total="+total);
-	}
-	
-	@Test
-	public void testPage(){
-		Page page = new Page();
-		page.setStart(6);
-		page.setLast(10);
-		
-		List<Category> cs = categoryMapper.list(page);
-		for(Category c : cs){
-			System.out.println(c);
-		}
-	}
-	
+//	@Test
+//	public void add(){
+//		for(int i=0;i<100;i++){
+//			Category category = new Category();
+//			category.setName("new Category");
+//			//categoryMapper.add(category);
+//		}
+//	}
+//	
+//	@Test
+//	public void total(){
+//		int total = categoryMapper.total();
+//		System.out.println("total="+total);
+//	}
+//	
+//	@Test
+//	public void testPage(){
+//		Page page = new Page();
+//		page.setStart(6);
+//		page.setLast(10);
+//		
+//		List<Category> cs = categoryMapper.list(page);
+//		for(Category c : cs){
+//			System.out.println(c);
+//		}
+//	}
+//	
 }

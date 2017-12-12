@@ -21,11 +21,11 @@
         </update>
         <select id="list" resultType="Category">
             select * from   category_     
-            <if test="start!=null and count!=null">
+           <!--  <if test="start!=null and count!=null">
                 limit #{start},#{count}
-            </if> 
+            </if>  -->
         </select>  
-          <select id="total" resultType="int">
+         <!--  <select id="total" resultType="int">
             select count(*) from category_
-         </select>   
+         </select>    -->
     </mapper>
