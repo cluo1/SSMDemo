@@ -10,7 +10,7 @@
 		
 		<form method="post" action="updateCategory">
 			name： <input name="name" value="${c.name}" type="text"> <br><br>
-			<input type="hidden" value="${c.id}" name="id">
+			<input name="id" type="hidden" value="${c.id}" >
 			<input type="submit" value="修改">
 		</form>
 

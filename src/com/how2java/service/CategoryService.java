@@ -8,4 +8,7 @@ public interface CategoryService {
 	public List<Category> list();
 	//int total();
 	//public List<Category> list(Page page);
+	public Category get(int id);
+	public void update(Category category);
+	public void delete(int id);
 }

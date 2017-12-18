@@ -37,12 +37,31 @@ public class CategoryController {
 	}
 
 	@RequestMapping("editCategory")
+	public ModelAndView editCategory(Category category){
+		ModelAndView mv = new ModelAndView();
+		Category c = categoryService.get(category.getId());
+		mv.addObject("c",c);
+		mv.setViewName("editCategory"); 
+		return mv;
+	}
+	
+	@RequestMapping("updateCategory")
 	public ModelAndView updateCategory(Category category){
-		int id = category.getId();
 		
+		categoryService.update(category);
 		ModelAndView mv = new ModelAndView();
 		 
-		mv.setViewName("editCategory");
+		mv.setViewName("redirect:/listCategory");
+		
+		return mv;
+	}
+	
+	@RequestMapping("deleteCategory")
+	public ModelAndView deleteCategory(Category category){
+		
+		ModelAndView mv = new ModelAndView();
+		categoryService.delete(category.getId());
+		mv.setViewName("redirect:/listCategory");
 		
 		return mv;
 	}

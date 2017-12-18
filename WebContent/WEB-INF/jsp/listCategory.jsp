@@ -18,8 +18,8 @@
 	        <tr>
 	            <td>${c.id}</td>
 	            <td>${c.name}</td>
-	            <td><a href="<%=sPath %>/editCategory?id=${c.id}">edit</a></td>
-              <td><a href="<%=sPath %>/deleteCategory/?id=${c.id}">delete</a></td>
+	            <td><a href="editCategory?id=${c.id}">edit</a></td>
+              <td><a href="deleteCategory?id=${c.id}">delete</a></td>
 	        </tr>
 	    </c:forEach>
 	</table>
