@@ -16,8 +16,8 @@
 
 <script type="text/javascript">
   $("#sender").click(function (){
-	  var id = $("#id").val;
-	  var name = $("#name").val;
+	  var id = $("#id").val();
+	  var name = $("#name").val();
 	  alert(id+":"+name);	  
 	  var category = {"id":id,"name":name};
 	  var jsonData = JSON.stringify(category);
