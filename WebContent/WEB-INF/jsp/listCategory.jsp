@@ -4,9 +4,6 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div style="width:500px;margin:0px auto;text-align:center">	 
   
-  <%
-     String sPath =  request.getContextPath();
-  %>
 	<table align='center' border='1' cellspacing='0'>
 	    <tr>
 	        <td>id</td>
