@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Contenty-type" content="text/html" charset="UTF-8">
+<title>用Ajax以Json方式提交数据</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+  <fieldset>
+    <legend>Json</legend>
+    id:<input id="id" value="123"/></br>    
+    name:<input id="name" value="category_123"/>
+    <button id="sender">提交</button>
+  </fieldset>
+</body>
+
+<script type="text/javascript">
+  $("#sender").click(function (){
+	  var id = $("#id").val;
+	  var name = $("#name").val;
+	  alert(id+":"+name);	  
+	  var category = {"id":id,"name":name};
+	  var jsonData = JSON.stringify(category);
+	  
+  });
+
+</script>
+</html>

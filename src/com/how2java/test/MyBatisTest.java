@@ -10,13 +10,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.how2java.mapper.CategoryMapper;
 import com.how2java.pojo.Category;
+import com.how2java.service.CategoryService;
 import com.how2java.util.Page;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class MyBatisTest {
+//	@Autowired
+//	CategoryMapper categoryMapper;
+	
 	@Autowired
-	CategoryMapper categoryMapper;
+	CategoryService categoryService;
 	
 //	@Test
 //	public void add(){
@@ -45,4 +49,10 @@ public class MyBatisTest {
 //		}
 //	}
 //	
+	
+	@Test
+	public void testAddTwo(){
+		categoryService.deleteAll();
+		categoryService.addTwo();
+	}
 }

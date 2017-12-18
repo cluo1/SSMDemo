@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.how2java.mapper.CategoryMapper;
 import com.how2java.pojo.Category;
@@ -38,6 +40,27 @@ public class CategoryServiceImpl implements CategoryService{
 	@Override
 	public void delete(int id) {
 		categoryMapper.delete(id);
+	}
+	
+	@Override
+	//新增两条数据
+	@Transactional(propagation=Propagation.REQUIRED,rollbackForClassName="Excetion")
+	public void addTwo() {
+		Category category = new Category();
+		category.setName("sb");
+		categoryMapper.add(category);
+		
+		category.setName("名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下,名字长对应字段放不下");
+		categoryMapper.add(category);
+		
+	}
+	@Override
+	//删除所有
+	public void deleteAll() {
+		List<Category> list = categoryMapper.list();
+		for(Category c : list){
+			categoryMapper.delete(c.getId());
+		}
 	}
 	
 }

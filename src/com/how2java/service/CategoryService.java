@@ -11,4 +11,10 @@ public interface CategoryService {
 	public Category get(int id);
 	public void update(Category category);
 	public void delete(int id);
+	
+	//新增两条数据
+	public void addTwo();
+	
+	//删除所有
+	public void deleteAll();
 }

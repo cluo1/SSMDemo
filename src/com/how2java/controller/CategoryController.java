@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
@@ -65,4 +67,16 @@ public class CategoryController {
 		
 		return mv;
 	}
+	
+	
+	
+	//用AJAX以JSON方式提交数据
+	@ResponseBody
+	@RequestMapping("submitCategroy")
+	public String submitCategroy(@RequestBody Category category){
+		System.out.println("ssm接受浏览器提交的Json，并转化为category对象："+category);
+		return "ok";
+	}
+	
+	
 }
