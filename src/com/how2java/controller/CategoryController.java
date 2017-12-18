@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.how2java.pojo.Category;
@@ -78,5 +79,19 @@ public class CategoryController {
 		return category;
 	}
 	
+	
+	//用Ajax以JSON获取单个对象
+	@ResponseBody
+	@RequestMapping("/getOneCategory")
+	public String getOneCategory(){
+		Category c = new Category();
+		c.setId(100);
+		c.setName("第100个对象");
+		
+		JSONObject json = new JSONObject();
+		json.put("category", json.toJSON(c));
+		
+		return json.toJSONString();
+	}
 	
 }
