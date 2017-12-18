@@ -9,7 +9,7 @@
   <fieldset>
     <legend>Json</legend>
     id:<input id="id" value="123"/></br>    
-    name:<input id="name" value="category_123"/>
+    name:<input id="name" value="category_123"/><span id="msg"></span><br>
     <button id="sender">提交</button>
   </fieldset>
 </body>
@@ -18,9 +18,24 @@
   $("#sender").click(function (){
 	  var id = $("#id").val();
 	  var name = $("#name").val();
-	  alert(id+":"+name);	  
 	  var category = {"id":id,"name":name};
+	  
 	  var jsonData = JSON.stringify(category);
+	  
+	  var page = "submitCategroy";
+	  
+	  $.ajax({
+		  url:page,
+		  type:"post",
+		  data:jsonData,
+		  dataType:"json",
+		  contentType:"application/json;charset=UTF-8",
+		  success:function(result){
+			  var id = result.id;
+			  var name = result.name;
+			  $("#msg").html("<font color='red'>"+name+"</font>");
+		  }
+	  });
 	  
   });
 

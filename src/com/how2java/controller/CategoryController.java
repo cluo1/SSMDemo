@@ -73,9 +73,9 @@ public class CategoryController {
 	//用AJAX以JSON方式提交数据
 	@ResponseBody
 	@RequestMapping("submitCategroy")
-	public String submitCategroy(@RequestBody Category category){
+	public Category submitCategroy(@RequestBody Category category){
 		System.out.println("ssm接受浏览器提交的Json，并转化为category对象："+category);
-		return "ok";
+		return category;
 	}
 	
 	
