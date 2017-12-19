@@ -1,5 +1,6 @@
 package com.how2java.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,6 +93,22 @@ public class CategoryController {
 		json.put("category", json.toJSON(c));
 		
 		return json.toJSONString();
+	}
+	
+	//用Ajax以JSON获取多个对象
+	@ResponseBody
+	@RequestMapping("/getManyCategory")
+	public String getManyCategory(){
+		List<Category> list = new ArrayList<Category>();
+		for(int i=101;i<110;i++){
+			Category c = new Category();
+			c.setId(i);
+			c.setName("第"+i+"个Category对象");
+			
+			list.add(c);
+		}
+		
+		return JSONObject.toJSON(list).toString();
 	}
 	
 }
