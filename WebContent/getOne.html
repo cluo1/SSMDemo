@@ -7,18 +7,20 @@
 </head>
 <body>
 	<button id="getOne">点击获取json对象</button>
-	<div id="msg"></div>
+	<div id="msg"></div> 
 </body>
 <script type="text/javascript">
 	$("#getOne").click(function(){
 		var url = "getOneCategory";
-		$.post({
+		$.post(
 			url,
 			function(data){
 				var json = JSON.parse(data);
-				alert(json);
+				var id = json.category.id;
+				var name = json.category.name;
+				$("#msg").html("id:"+id+"<br>"+"name:"+name);
 			}
-		});
+		);
 	});
 </script>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <title>用ajax以json方式获取多个对象</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+  <button id="getMany">点击用ajax以json方式获取多个对象</button>
+  
+  <div id="msg"></div>
+</body>
+  <script type="text/javascript">
+    $("#getMany").click(function(){
+    	var url = "getManyCategory";
+    	$.post(
+    		url,
+    		function(data){
+    			console.log(data);
+    			var cs = JSON.parse(data);
+    			//var cs = $.parseJSON(data);
+    			console.log(cs.length);
+    			
+    			for(i in cs){
+    				var msg = $("#msg").html();
+    				var id = cs[i].id;
+    				var name = cs[i].name;
+    				$("#msg").html(msg+"<br>id:"+id+",name:"+name);
+    			}
+    		}
+    	);
+    });
+  </script>
+
+</html>
