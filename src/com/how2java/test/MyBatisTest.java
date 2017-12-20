@@ -16,20 +16,20 @@ import com.how2java.util.Page;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class MyBatisTest {
-//	@Autowired
-//	CategoryMapper categoryMapper;
+	@Autowired
+	CategoryMapper categoryMapper;
 	
 	@Autowired
 	CategoryService categoryService;
 	
-//	@Test
-//	public void add(){
-//		for(int i=0;i<100;i++){
-//			Category category = new Category();
-//			category.setName("new Category");
-//			//categoryMapper.add(category);
-//		}
-//	}
+	@Test
+	public void add(){
+		for(int i=0;i<100;i++){
+			Category category = new Category();
+			category.setName("new Category");
+//			categoryMapper.add(category);
+		}
+	}
 //	
 //	@Test
 //	public void total(){
