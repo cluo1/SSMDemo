@@ -43,7 +43,7 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 	
 	@Override
-	//新增两条数据
+	//新增两条数据 支持事务回滚
 	@Transactional(propagation=Propagation.REQUIRED,rollbackForClassName="Excetion")
 	public void addTwo() {
 		Category category = new Category();
